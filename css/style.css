@@ -367,7 +367,7 @@ img {
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.9);
 
-    display: flex;
+    display: none;
     justify-content: center; /* ✅ gambar di tengah vertical */
     align-items: center; /* ✅ gambar di tengah horizontal */
     padding-top: 20rem;
