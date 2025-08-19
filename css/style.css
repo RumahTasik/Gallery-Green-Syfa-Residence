@@ -1,0 +1,387 @@
+:root {
+  --primary: #228b22;
+  --bg: #010101;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: #101010;
+}
+
+/* navbar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(1, 1, 1, 0.8);
+  border-bottom: 1px solid #2aa52aff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #ffd700;
+  font-style: italic;
+}
+
+.navbar .navbar-logo span,
+.slideshow-container span {
+  color: #228b22;
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: #228b22;
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid #228b22;
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+}
+
+.navbar .navbar-extra a:hover {
+  color: #228b22;
+}
+
+.navbar .navbar-extra a::after {
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+/* Show Slide */
+
+img {
+  vertical-align: middle;
+}
+
+.slideshow-container {
+  max-width: 3000px;
+  position: relative;
+}
+
+.slideshow-container h2 {
+  color: #ffd700;
+  text-align: center;
+  font-size: 2.6rem;
+  margin-top: 12rem;
+  margin-bottom: 1rem;
+}
+
+/* Caption text */
+.text {
+  color: #010101;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.7rem;
+  position: absolute;
+  bottom: 0.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #fff;
+  font-size: 0.5rem;
+  padding: 0.5rem 0.7rem;
+  position: absolute;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 1rem;
+  width: 1rem;
+  margin: 1 0.2rem;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+/* THE MODAL */
+
+.modal-trigger {
+  margin-top: 6rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  height: 355px;
+  width: 300px;
+  padding-bottom: 5px;
+  border-bottom-width: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  flex-wrap: wrap;
+}
+
+.modal-trigger:hover {
+  opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 100px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content,
+#caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 70px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* FADE */
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {
+    font-size: 11px;
+  }
+}
+
+/* MODAL MOBILE */
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
+}
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 102%;
+    right: -100%;
+    background-color: #ffd700;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .about .row {
+    flex-wrap: wrap;
+  }
+
+  .about .row .about-img img {
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .about .row .content {
+    padding: 0;
+  }
+
+  .about .row .content h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+
+  .about .row .content p {
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+  }
+  .menu .row .img img {
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .modal-trigger {
+    height: 80px;
+    width: 80px;
+    padding-bottom: 5px;
+    border-bottom-width: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 1200px;
+  }
+
+  /* Caption of Modal Image */
+  #caption {
+    position: middle;
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 100px 0;
+    height: 150px;
+  }
+
+  .close {
+    top: 15px; /* lebih tinggi biar tidak nempel gambar */
+    right: 15px; /* rapetin ke kanan */
+    font-size: 32px; /* agak kecil biar pas */
+  }
+}
+/* Mobile */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
