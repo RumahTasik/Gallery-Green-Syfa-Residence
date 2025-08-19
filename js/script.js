@@ -51,8 +51,9 @@ const images = document.querySelectorAll(".modal-trigger");
 
 // Loop setiap gambar supaya bisa diklik
 images.forEach((img) => {
-  img.addEventListener("click", function () {
-    modal.style.display = "block";
+  img.addEventListener("click", function (e) {
+    e.stopPropagation();
+    modal.style.display = "flex";
     modalImg.src = this.src;
     captionText.innerHTML = this.alt;
     navbar.style.display = "none"; // sembunyikan navbar
