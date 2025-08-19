@@ -360,7 +360,7 @@ img {
     max-width: 1200px;
   }
 
-    .modal {
+  .modal {
     display: none;
     position: fixed;
     inset: 0;
@@ -370,10 +370,9 @@ img {
     display: none;
     justify-content: center; /* ✅ gambar di tengah vertical */
     align-items: center; /* ✅ gambar di tengah horizontal */
-    padding-top: 20rem;
+    padding-top: 19rem;
   }
 
-  
   /* Caption of Modal Image */
   #caption {
     position: middle;
