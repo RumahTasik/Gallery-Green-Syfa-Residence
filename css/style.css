@@ -360,6 +360,20 @@ img {
     max-width: 1200px;
   }
 
+    .modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.9);
+
+    display: flex;
+    justify-content: center; /* ✅ gambar di tengah vertical */
+    align-items: center; /* ✅ gambar di tengah horizontal */
+    padding-top: 20rem;
+  }
+
+  
   /* Caption of Modal Image */
   #caption {
     position: middle;
